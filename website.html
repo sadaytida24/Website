@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Das - Frontend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a192f;
+            color: #fff;
+        }
+
+        header {
+            padding: 20px 0;
+            background-color: #0a192f;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ff7f50; /* Coral */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffa07a; /* Light Salmon */
+            font-weight: 600;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 60px 0; /* Reduced padding to fit better */
+            background-color: #0a192f;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h2 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero-text h3 {
+            font-size: 2em;
+            margin: 10px 0;
+            color: #ffa07a; /* Light Salmon */
+        }
+
+        .hero-text p {
+            font-size: 1em;
+            line-height: 1.5em;
+            color: #ffdab9; /* Peach Puff */
+        }
+
+        .hero-buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-right: 10px;
+            border: 2px solid #ff7f50; /* Coral */
+            color: #ff7f50; /* Coral */
+            background-color: #0a192f;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn:hover {
+            background-color: #ff7f50; /* Coral */
+            color: #0a192f;
+        }
+
+        .hero-image {
+            max-width: 45%; /* Limit the width of the image container */
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #ff4500; /* Orange Red */
+        }
+        
+        #skills {
+            background-color: #0a192f;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        #skills h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #ffa07a; /* Light Salmon */
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skills-grid img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .skills-categories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .skills-category {
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .skills-category h3 {
+            font-size: 1.5em;
+            color: #ffa07a; /* Light Salmon */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-category ul li {
+            margin: 5px 10px;
+            font-size: 1em;
+            color: #ffdab9; /* Peach Puff */
+            font-weight: 600;
+        }
+
+        #experience {
+            background-color: #0a192f;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        #experience h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #ffa07a; /* Light Salmon */
+        }
+
+        .timeline {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline li {
+            width: 80%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        .direction-r .flag-wrapper, .direction-l .flag-wrapper {
+            text-align: left;
+        }
+
+        .flag-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: #0a192f;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #ffa07a; /* Light Salmon */
+        }
+
+        .flag {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #ff7f50; /* Coral */
+        }
+
+        .time-wrapper {
+            font-size: 1em;
+            color: #ffdab9; /* Peach Puff */
+        }
+
+        .desc {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #ffdab9; /* Peach Puff */
+        }
+
+        #projects {
+            background-color: #0a192f;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #ffa07a; /* Light Salmon */
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #0a192f;
+            border: 2px solid #ffa07a; /* Light Salmon */
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .project h3 {
+            color: #ff7f50; /* Coral */
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #ffdab9; /* Peach Puff */
+            font-size: 1em;
+        }
+
+        #degrees {
+            background-color: #0a192f;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        #degrees h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #ffa07a; /* Light Salmon */
+        }
+
+        .degree-grid, .certification-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.degree, .certification {
+    background-color: #0a192f;
+    border: 2px solid #ffa07a; /* Light Salmon */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+
+        .degree h3, .certification h3 {
+            color: #ff7f50; /* Coral */
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .degree p, .certification p {
+            color: #ffdab9; /* Peach Puff */
+            font-size: 1em;
+        }
+
+
+    footer {
+        background-color: #0a192f;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 1em;
+        color: #ffdab9; /* Peach Puff */
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Aditya.</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#degrees">Degrees/Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-text">
+                <h2>Hi, I'm Aditya Das</h2>
+                <h3>IT Operations Engineer</h3>
+                <p>I'm an IT professional with a combined 3 years of internship experience in IT management, Cloud, and IT maintenance. I have helped companies manage their technology infrastructure, security, and support their users, cloud, and software.</p>
+                <div class="hero-buttons">
+                    <a href="Resume.pdf" class="btn primary-btn" target="_blank">
+                        <i class='bx bxs-notepad'></i> Resume
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/dasaditya24/" class="btn secondary-btn" target="_blank">
+                        <i class='bx bxl-linkedin-square'></i> Let's Connect
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/pfp.png" alt="Aditya Das">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <img src="images/Python.png" alt="Aditya Das">
+            <img src="images/Java.png" alt="Aditya Das">
+            <img src="images/C.png" alt="Aditya Das">
+            <img src="images/ubuntu.png" alt="Aditya Das">
+            <img src="images/AWS.png" alt="Aditya Das">
+            <img src="images/Azure.png" alt="Aditya Das">
+            <img src="images/Jira.png" alt="Aditya Das">
+            <img src="images/git.png" alt="Aditya Das">
+            <img src="images/Github.png" alt="Aditya Das">
+            <img src="images/tf.png" alt="Aditya Das">
+            <img src="images/html.png" alt="Aditya Das">
+            <img src="images/css.png" alt="Aditya Das">
+            <img src="images/JS.png" alt="Aditya Das">
+        </div>
+        <div class="skills-categories">
+            <div class="skills-category">
+                <h3>Cloud Technologies</h3>
+                <ul>
+                    <li>AWS</li>
+                    <li>Azure</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Terraform</li>
+                    <li>Git/Github</li>
+                    <li>Jira</li>
+                    <li>Crowdstrike</li>
+                    <li>Zoho Assist</li>
+                    <li>Miro</li>
+                    <li>Office365</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>My Experience</h2>
+        <ul class="timeline">
+            <li>
+                <div class="direction-r">
+                    <div class="flag-wrapper">
+                        <span class="flag">IT Engineer at Van Cleef Engineering</span>
+                        <span class="time-wrapper"><span class="time"> March 2022 - May 2023</span></span>
+                    </div>
+                    <div class="desc">I collaborated with the IT department to bolster the technology infrastructure of the civil engineering firm, engaging in tasks such as imaging and configuring computers, managing domain systems and servers, and adeptly resolving various IT issues.</div>
+                </div>
+            </li>
+            <li>
+                <div class="direction-l">
+                    <div class="flag-wrapper">
+                        <span class="flag">IT Operations Engineer at OptionMetrics</span>
+                        <span class="time-wrapper"><span class="time">March 2024 - Present</span></span>
+                    </div>
+                    <div class="desc">I seamlessly integrated with the Operations team to uphold device inventory and security standards. My responsibilities extended to administering Microsoft Licenses, Crowdstrike, Atlassian, Active Directory, and Entra ID users, while also meticulously reviewing networking portals such as Spectrum, Crown Castle, and Aruba. Additionally, I actively engaged with the AWS platform, leveraging infrastructure as code tools like Terraform and GitHub Actions to optimize operational efficiency.</div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>Project 1: Personal Portfolio Website</h3>
+                <p>Developed a personal portfolio website to showcase my skills, experience, and projects. The site is built using HTML, CSS, and JavaScript with a responsive design.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2: Company Inventory App</h3>
+                <p>Created a Inventory app for my Company using python, sql, and flask, allowing users to add, edit, and delete Inventory from users/groups. The app includes Order Requests, Asset Inventory, and User count.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3: Secure File Transfer System</h3>
+                <p>Created a system for securely transferring files between users, incorporating encryption and secure authentication methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="degrees">
+        <h2>Degrees & Certifications</h2>
+        <div class="degree-grid">
+            <div class="degree">
+                <h3>Associates of Science in Computer Science</h3>
+                <p>Mercer County Community College, 2021 - 2023</p>
+            </div>
+            <div class="degree">
+                <h3>Bachelors of Science in Information Technology</h3>
+                <p>New Jersey Institute of Technology, 2023 - 2025</p>
+            </div>
+        </div>
+        <div class="certification-grid">
+            <div class="certification">
+                <h3>Cybersecurity Specialist</h3>
+                <p>IBM and ISC, 2024</p>
+            </div>
+            <div class="certification">
+                <h3>IT Support</h3>
+                <p>GOOGLE, 2024</p>
+            </div>
+            <div class="certification">
+                <h3>SWE Job Simulation</h3>
+                <p>JP MORGAN, 2024</p>
+            </div>
+        </div>
+    </section>
+
+<footer>
+    <p>&copy; 2024 Aditya Das. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
